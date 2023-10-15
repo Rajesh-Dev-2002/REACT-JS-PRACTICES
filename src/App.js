@@ -1,24 +1,19 @@
-import "./App.css";
+import React, { useState } from 'react'
 
-//this is the object which have to render to the app function 💪
-const dj = <h1>hello Buddy</h1>;
-// this is functional components 
-const xyz = () =>(
-  
-    <h2>Iam Rajesh Kumar</h2>
-  
-)
-function App() {
+const App = () => {
+  const [change,setChange]= useState("Hello")
+  // const change = "hello"
   return (
-    <div className="">
     
-      <header className="">
-        {dj}
-        {xyz()}
-        <xyz/>
-      </header>
+    <>
+    <div>
+      <input type="text" placeholder='search text' onChange={(e)=>setChange(e.target.value)}  value={change}/>
+      {/* // because it is a data one way data binding binding */}
+      <button>Submit--{change}</button>
+      
     </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
